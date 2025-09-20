@@ -1,33 +1,86 @@
-/* You can add global styles */
+/* You can add global styles to this file */
 
+/* Variables CSS globales */
+:root {
+  --primary-color: #4299e1;
+  --secondary-color: #64748b;
+  --text-dark: #2d3748;
+  --text-light: #718096;
+  --background: #ffffff;
+  --surface: #f8fafc;
+  --border: #e5e7eb;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Reset et styles de base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #2d3748;
-  background-color: #ffffff;
-  line-height: 1.6;
+html {
+  scroll-behavior: smooth;
+   scroll-padding-top: 4rem; 
 }
 
-/* Classes utilitaires globales */
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+  background-color: var(--background);
+  line-height: 1.6;
+  padding-top: 4rem;
+  min-height: 100vh;
+}
+
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-.text-center { 
-  text-align: center; 
+.text-left { 
+  text-align: left; 
 }
 
-.mt-4 { 
-  margin-top: 1rem; 
+.text-right { 
+  text-align: right; 
 }
 
-.mb-4 { 
-  margin-bottom: 1rem; 
+/* Espacements */
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-6 { margin-top: 1.5rem; }
+.mt-8 { margin-top: 2rem; }
+
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-8 { margin-bottom: 2rem; }
+
+.p-2 { padding: 0.5rem; }
+.p-4 { padding: 1rem; }
+.p-6 { padding: 1.5rem; }
+.p-8 { padding: 2rem; }
+
+.text-primary { color: var(--primary-color); }
+.text-secondary { color: var(--secondary-color); }
+.text-muted { color: var(--text-light); }
+
+
+.shadow-sm { box-shadow: 0 1px 2px var(--shadow); }
+.shadow-md { box-shadow: 0 4px 6px var(--shadow); }
+.shadow-lg { box-shadow: 0 10px 15px var(--shadow); }
+
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  body {
+    padding-top: 2rem; /* Moins d'espace sur mobile */
+  }
+  
+  .container {
+    padding: 0 0.75rem;
+  }
 }
