@@ -1,20 +1,42 @@
 <div class="home-container">
     <div class="content">
-        <section>
-            <!-- Utilisation avec title et subtitle -->
-            <app-page-title title="Bienvenue sur mon site!" subtitle="Commençons Angular tous ensemble!"
-                [style]="TitleStyleEnum.CENTER">
+        <section class="hero-section">
+
+            <app-page-title title="Bienvenue dans l'univers Angular !"
+                subtitle="Découvrez la puissance du framework moderne de Google" [style]="TitleStyleEnum.CENTER">
             </app-page-title>
 
+            <p>Angular est un framework TypeScript open-source développé par Google. Il permet de créer des applications
+                web dynamiques et robustes avec une architecture component-based. Grâce à son écosystème riche et ses
+                outils intégrés, Angular facilite le développement d'applications complexes et maintenables.</p>
+        </section>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur deleniti dolorem eligendi maxime
-                totam.
-                Cumque ea excepturi hic illo, laudantium minus nihil quaerat sit tempore!</p>
+        <!-- composants Angular -->
+        <section class="features-section">
+            <app-page-title title="Composants réutilisables" subtitle="L'art de la modularité avec Angular"
+                [style]="TitleStyleEnum.RIGHT">
+            </app-page-title>
+
+            <p>Les composants Angular sont la pierre angulaire de toute application. Ils encapsulent la logique, le
+                template et les styles, permettant une réutilisation efficace. Avec les @Input et @Output, la
+                communication entre composants devient fluide et intuitive. Notre composant page-title en est un parfait
+                exemple !</p>
+        </section>
+
+        <!-- TypeScript -->
+        <section class="tech-section">
+            <app-page-title title="TypeScript au cœur d'Angular" subtitle="Type safety et productivité maximale"
+                [style]="TitleStyleEnum.LEFT">
+            </app-page-title>
+
+            <p>TypeScript apporte la sécurité des types à JavaScript, réduisant les erreurs de runtime.
+                Les enums, interfaces et génériques permettent un code plus robuste. L'autocomplétion et la
+                refactorisation deviennent un jeu d'enfant dans votre IDE préféré.</p>
         </section>
 
         <div class="actions">
-            <button class="btn btn-primary">Commencer</button>
-            <button class="btn btn-secondary">En savoir plus</button>
+            <button class="btn btn-primary">Commencer mon projet Angular</button>
+            <button class="btn btn-secondary">Explorer la documentation</button>
         </div>
     </div>
 </div>
