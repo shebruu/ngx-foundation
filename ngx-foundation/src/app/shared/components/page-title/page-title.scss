@@ -2,11 +2,33 @@
   h1 {
     font-size: 2.5rem;
     color: #2d3748;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-weight: 700;
     transition: all 0.3s ease;
     
     // Classes simples pour l'alignement
+    &.left {
+      text-align: left;
+    }
+    
+    &.center {
+      text-align: center;
+    }
+    
+    &.right {
+      text-align: right;
+    }
+  }
+  
+  // Style pour le subtitle
+  span {
+    display: block;
+    font-size: 1.2rem;
+    color: #718096;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    
+    // Hérite de l'alignement du titre
     &.left {
       text-align: left;
     }
