@@ -9,6 +9,5 @@ import { TitleStyleEnum } from '../../shared/enums/title-style.enum';
   styleUrl: './home.scss'
 })
 export class Home {
-  // Exposer l'enum au template pour l'utiliser dans le HTML
-  TitleStyleEnum = TitleStyleEnum;
+  protected readonly TitleStyleEnum = TitleStyleEnum;
 }
