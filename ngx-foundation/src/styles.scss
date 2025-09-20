@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2d3748;
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Classes utilitaires globales */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.text-center { 
+  text-align: center; 
+}
+
+.mt-4 { 
+  margin-top: 1rem; 
+}
+
+.mb-4 { 
+  margin-bottom: 1rem; 
+}

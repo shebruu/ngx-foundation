@@ -1,0 +1,32 @@
+h1 {
+  font-size: 2.5rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  
+  &.title-left {
+    text-align: left;
+  }
+  
+  &.title-center {
+    text-align: center;
+  }
+  
+  &.title-right {
+    text-align: right;
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    
+    // Sur mobile, forcer le centre pour une meilleure lisibilité
+    &.title-left,
+    &.title-right {
+      text-align: center;
+    }
+  }
+}
