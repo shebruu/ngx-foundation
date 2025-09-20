@@ -1,9 +1,9 @@
 # ngx-foundation - **Angular 17+** 
 
-## 📋 Description
-Il inclut un système de composants réutilisables, des styles globaux optimisés
+## Description
+Starter angular incluant des composants réutilisables, des styles globaux optimisés et une architectutre modulaire.
 
-## 📦 Installation
+## Installation
 ### Prérequis
 Assurez-vous d'avoir installé :
 - [Node.js](https://nodejs.org/) (version 18 ou supérieure)
@@ -62,7 +62,7 @@ ng generate service mon-service
 ````
 
 
-## 📚 Ressources utiles
+## Documentation
 - [Documentation Angular](https://angular.io/docs)
 - [Guide TypeScript](https://www.typescriptlang.org/docs/)
 - [MDN Web Docs](https://developer.mozilla.org/)
