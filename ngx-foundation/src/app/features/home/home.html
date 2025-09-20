@@ -1,7 +1,15 @@
 <div class="home-container">
     <div class="content">
+        <!-- Exemple 1: Avec enum typé pour la sécurité des types -->
         <app-page-title title="Bienvenue sur NGX Foundation!" [style]="TitleStyleEnum.CENTER">
         </app-page-title>
+
+        <!-- Exemples d'autres alignements avec enum -->
+        <!-- <app-page-title title="Titre à gauche" [style]="TitleStyleEnum.LEFT"></app-page-title> -->
+        <!-- <app-page-title title="Titre à droite" [style]="TitleStyleEnum.RIGHT"></app-page-title> -->
+
+        <!-- Test sans style (utilise la valeur par défaut CENTER) -->
+        <!-- <app-page-title title="Titre par défaut"></app-page-title> -->
 
         <p class="welcome-text">Home page content goes here!</p>
         <p class="subtitle">Une base moderne pour vos projets Angular</p>

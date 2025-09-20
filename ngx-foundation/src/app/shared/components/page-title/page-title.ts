@@ -8,13 +8,14 @@ import { TitleStyleEnum } from '../../enums/title-style.enum';
   styleUrl: './page-title.scss'
 })
 export class PageTitle {
-  @Input() title: string = '';
-  @Input() style: TitleStyleEnum = TitleStyleEnum.CENTER;
+  @Input() title: string = "";
+  @Input() style?: TitleStyleEnum; // Optionnel avec enum typé
   
   // Exposer l'enum au template
   TitleStyleEnum = TitleStyleEnum;
   
-  get titleClass(): string {
-    return `title-${this.style}`;
+  // Getter pour avoir une valeur par défaut
+  get alignmentClass(): string {
+    return this.style || TitleStyleEnum.CENTER;
   }
 }
