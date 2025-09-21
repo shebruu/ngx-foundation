@@ -4,8 +4,7 @@
 Starter angular incluant des composants réutilisables, des styles globaux optimisés et une architectutre modulaire.
 
 ## Installation
-### Prérequis
-Assurez-vous d'avoir installé :
+
 - [Node.js](https://nodejs.org/) (version 18 ou supérieure)
 - [Angular CLI](https://angular.io/cli) (version 17 ou supérieure)
 
