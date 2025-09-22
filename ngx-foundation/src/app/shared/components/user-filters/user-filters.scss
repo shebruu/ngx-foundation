@@ -1,4 +1,16 @@
+
+div {
+
+    margin-top: 20px;
+    margin-bottom: 20px;    
+    display: flex;
+    gap: 10px;
+
+}
+
+
 button {
+
             margin-right: 10px;
          
 
@@ -12,3 +24,15 @@ button {
                 background-color: darken(#076bd6, 10%);
             }
         }
+
+// .error_firstname {
+//     color: red;
+//     font-weight: bold;
+// }
+
+.error_message_firstname {
+    color: red;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 4px;
+}

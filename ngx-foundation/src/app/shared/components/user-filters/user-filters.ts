@@ -1,9 +1,10 @@
+import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule  } from '@angular/forms';
 
 @Component({
   selector: 'app-user-filters',
-  imports: [FormsModule],
+  imports: [FormsModule, NgClass],
   templateUrl: './user-filters.html',
   styleUrl: './user-filters.scss'
 })
