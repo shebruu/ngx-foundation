@@ -8,5 +8,20 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './view.scss'
 })
 export class View {
-private _ar=inject(ActivatedRoute)
+  private readonly _ar:ActivatedRoute=inject(ActivatedRoute);
+
+  constructor() {
+
+    // const d = this._ar.snapshot.params['id'];
+    const paramId: string | null = this._ar.snapshot.paramMap.get('id');
+if (paramId) {
+// conversion en nb
+  const id: number = +paramId;
+
+  console.log("view is running ",typeof id,id);
+
+}
+
+
+  }
 }
