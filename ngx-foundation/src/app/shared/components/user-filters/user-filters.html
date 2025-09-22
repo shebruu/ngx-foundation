@@ -1,0 +1,11 @@
+
+
+<p>user-filters works!</p>
+<div>
+    <label for="firstname">FirstName:</label>
+    <input  id="firstname"  [(ngModel)]="firstnameInput">
+
+
+</div>
+<!-- désactiver le bouton si le champ est vide -->
+    <button  [disabled]="!firstnameValidation()" (click)="search()">search</button>
