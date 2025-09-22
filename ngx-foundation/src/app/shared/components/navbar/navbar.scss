@@ -1,36 +1,58 @@
 .nav_header {
-  background-color: #96bfe0;
-  width: 100%;
-  overflow: auto;
-  position: fixed;
-  top: 0;
-
-  ul {
+    background-color: #96bfe0;
+    width: 100%;
+   opacity: 0.9;
+ 
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    
+    ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 
     li {
-      float: left;
-      flex-direction: row-reverse;
-      margin-right: 20px;
-      margin-left: 30px;
-
-      a {
-        display: block;
-        color: rgb(1, 0, 27);
-        text-align: center;
-        padding: 10px 26px;
-        text-decoration: none;
-
-        &:hover {
-          background-color: #a0a8ac;
-          color: black;
+        float: left;
+        margin-right: 20px;
+        margin-left: 30px;
+        
+        
+        a {
+            display: block;
+            color: rgb(1, 0, 27);
+            text-align: center;
+            padding: 10px 26px;
+            text-decoration: none;
+            
+            &:hover {
+                background-color: #a0a8ac;
+                color: black;
+                
+          
+            }
         }
-      }
     }
   }
 }
+
+.disable_users,
+.disable_cars{
+  display: none;
+//   visibility: hidden;
+
+}
+
+
+li:hover .disable_users,
+li:hover .disable_cars {
+  display:flex;
+  position: relative;
+    //  flex-direction:row;
+     flex-direction: column;
+
+}
+
 
 .sidebar {
   background-color: #96bfe0;
@@ -84,20 +106,6 @@
 }
 
 
-.disable_users,
-.disable_cars{
-  display: none;
-//   list-style: none;
-//   visibility: hidden;
-//   opacity: 0;
-}
-
-
-li:hover .disable_users,.disable_cars {
-  display: block;
-  position: relative;
-
-}
 .active {
   background-color: #bfbeee !important;
   color: black !important;
