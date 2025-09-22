@@ -109,6 +109,28 @@ body {
         }
     }
 }
+
+.error_firstname {
+    color: red;
+    font-weight: bold;
+}
+
+
+.search_button {
+
+            margin-right: 10px;
+         
+
+            border: none;
+            padding: 8px 16px;
+         
+            text-decoration: none;
+            border-radius: 4px;
+
+            &:hover {
+                background-color: #27566d;
+            }
+        }
 /* Responsive utilities */
 @media (max-width: 768px) {
   body {

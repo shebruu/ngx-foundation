@@ -12,7 +12,7 @@
 
 </div>
 <!-- désactiver le bouton si le champ est vide -->
-    <button  [disabled]="!firstnameValidation()" (click)="search()" >search</button>
+    <button class="search_button" [disabled]="!firstnameValidation()" (click)="search()" >search</button>
 
      @if (!this.firstnameValidation()) {
         <p class="error_message_firstname">Firstname is required</p>
