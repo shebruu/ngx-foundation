@@ -1,9 +1,9 @@
 import { Component,inject } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-view',
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './view.html',
   styleUrl: './view.scss'
 })

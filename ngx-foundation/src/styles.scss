@@ -1,6 +1,5 @@
 /* You can add global styles to this file */
 
-/* Variables CSS globales */
 :root {
   --primary-color: #4299e1;
   --secondary-color: #64748b;
@@ -21,7 +20,6 @@
 
 html {
   scroll-behavior: smooth;
-   scroll-padding-top: 4rem; 
 }
 
 body {
@@ -29,7 +27,7 @@ body {
   color: var(--text-dark);
   background-color: var(--background);
   line-height: 1.6;
-  padding-top: 4rem;
+  margin-left: 250px; 
   min-height: 100vh;
 }
 
@@ -37,7 +35,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 1rem; 
 }
 
 .text-left { 
@@ -75,45 +73,12 @@ body {
 
 
 
-.div_buttons {
-    margin-top: 24px;
-    margin-bottom: 24px;
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap-reverse;
-    align-items: center;
-    button {
-        margin-right: 10px;
-        background-color: #076bd6;
-        box-shadow: #35482d;
-        border: none;
-        color: rgb(255, 255, 255);
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-  
-        border-radius: 8px;
-        cursor: grab;
-        transition-duration: 0.4s;
-        &:hover {
-            background-color: #210c96;
-        }
-        a {
-            color: white;
-            text-decoration: none;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
-        
-        }
-    }
-}
 
 .error_firstname {
     color: red;
     font-weight: bold;
 }
+
 
 
 .search_button {
