@@ -1,0 +1,44 @@
+
+.nav {
+    background-color: #96bfe0;
+    width: 100%;
+    overflow: auto;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+
+     ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    
+     
+   
+
+        li {
+            float: left;
+            margin-right: 20px;
+            margin-left: 30px;
+         
+
+            a {
+                display: block;
+                color: rgb(1, 0, 27);
+                text-align: center;
+                padding: 20px 26px;
+                text-decoration: none;
+   
+                &:hover {
+                    background-color: #a0a8ac;
+                    color: black;
+                }
+            }
+        }
+    }
+}
+
+.active {
+    background-color: #bfbeee;
+    color: black;
+    font-weight: bold;
+}
