@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-view',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './view.scss'
 })
 export class View {
-
+ private readonly _ar:ActivatedRoute=inject(ActivatedRoute);
 }
