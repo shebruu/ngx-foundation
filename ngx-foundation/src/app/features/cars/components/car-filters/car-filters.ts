@@ -1,44 +1,29 @@
-// import { NgClass } from '@angular/common';
-import { Component, inject } from '@angular/core';
-
-import { NonNullableFormBuilder, ReactiveFormsModule } from '@angular/forms';
-
-import { createCarFilterform, CarFilters } from '../../form/carfilter.form';
-
+import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CarFilterFormFactory, CarFilters } from '../../form/carfilter.form';
 
 @Component({
   selector: 'app-car-filters',
-  imports: [ ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './car-filters.html',
   styleUrl: './car-filters.scss'
 })
 export class CarFiltersComponent {
- 
-  private readonly fb = inject(NonNullableFormBuilder);
+  private carFilterFormFactory = inject(CarFilterFormFactory);
+  public carFilterForm = this.carFilterFormFactory.createForm();
 
-  public carFilterForm = createCarFilterform(this.fb);
+  @Output() FormFilterChanged = new EventEmitter<CarFilters>();
 
   search() {
-    console.log(this.carFilterForm.value);
+    if (this.carFilterForm.valid) {
+      const filters = this.carFilterForm.getRawValue();
+      console.log("Formulaire valide", filters);
 
-    if(this.carFilterForm.valid){
-      const filters = this.carFilterForm.value;
-      console.log("formulaire bien valide", filters);
+      this.FormFilterChanged.emit(filters);
     } else {
       this.carFilterForm.markAllAsTouched();
-      console.log("formulaire invalide");
+      console.log("Formulaire invalide");
     }
   }
-
-  // filterByYear() {
-  //   const minYear = this.carFilterForm.get('minYear')?.value;
-  //   const maxYear = this.carFilterForm.get('maxYear')?.value;
-    
-  //   if (minYear && maxYear) {
-  //     console.log(`Filtrage par année: ${minYear} - ${maxYear}`);
-  //     // Logique de filtrage par année
-  //   } else {
-  //     console.log("Veuillez saisir les années min et max");
-  //   }
-  // }
 }
+

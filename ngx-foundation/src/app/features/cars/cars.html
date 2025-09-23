@@ -1,3 +1,31 @@
-<p>cars works!</p>
-<app-car-filters></app-car-filters>
- 
+<h2>Cars Management</h2>
+
+<!--  Écoute l'événement FormFilterChanged -->
+<app-car-filters (FormFilterChanged)="onCarFiltersChanged($event)"></app-car-filters>
+
+<div class="parent-controls">
+    <h3>Contrôles Parent (ViewChild)</h3>
+
+    <button (click)="resetCarFilters()" class="btn-secondary">
+        Reset
+    </button>
+
+    <button (click)="fillWithToyotaFilters()" class="btn-secondary">
+        Pré-remplir Toyota
+    </button>
+
+    <button (click)="getCurrentFormValues()" class="btn-secondary">
+        Voir Valeurs
+    </button>
+
+    <button (click)="triggerSearch()" class="btn-primary">
+        Rechercher
+    </button>
+</div>
+
+<div class="results">
+
+    <p>Résultats de filtrage
+    </p>
+
+</div>
