@@ -10,7 +10,6 @@ import { Create as CreateCar } from './features/cars/create/create';
 import { View as ViewCar } from './features/cars/view/view';
 import { Edit as EditCar } from './features/cars/edit/edit';
 
-
 export const routes: Routes = [
   {
     path: '',

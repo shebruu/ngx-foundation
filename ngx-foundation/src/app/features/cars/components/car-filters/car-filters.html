@@ -1,0 +1,47 @@
+<h3>Car Filters</h3>
+<form [formGroup]="carFilterForm" (ngSubmit)="search()" class="form">
+
+  <div class="row">
+    <label for="model">Model</label>
+    <input id="model" formControlName="model" type="text" placeholder="Enter model" />
+    
+  </div>
+
+ <div class="row">
+    <label for="brand">Brand</label>
+    <input id="brand" formControlName="brand" type="text" placeholder="Enter brand" />
+
+  </div>
+
+
+  <div class="row two-cols">
+    <div>
+      <label for="minYear">Min Year</label>
+      <input id="minYear" formControlName="minYear" type="number" inputmode="numeric" />
+    </div>
+    <div>
+      <label for="maxYear">Max Year</label>
+      <input id="maxYear" formControlName="maxYear" type="number" inputmode="numeric" />
+    </div>
+  </div>
+
+
+<div class="row two-cols">
+    <div>
+      <label for="minhp">Min HP</label>
+      <input id="minhp" formControlName="minhp" type="number" inputmode="numeric" />
+    </div>
+    <div>
+      <label for="maxhp">Max HP</label>
+      <input id="maxhp" formControlName="maxhp" type="number" inputmode="numeric" />
+    </div>
+  </div>
+
+  
+
+  <button type="submit">Filter</button>
+
+
+
+
+</form>
