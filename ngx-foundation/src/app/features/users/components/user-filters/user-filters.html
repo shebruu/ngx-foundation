@@ -1,0 +1,25 @@
+
+
+<p>user-filters works!</p>
+<div [formGroup]="userfilterForm">
+    
+    <label >FirstName:</label>
+
+
+    <input  formControlName="firstname" type="text"  placeholder="Enter firstname"   >
+        <!-- firstname @createuserfilterform --> 
+
+        @if (!userfilterForm.controls['firstname'].valid &&
+        userfilterForm.controls['firstname'].dirty &&
+        userfilterForm.controls['firstname'].touched ) {
+        <p class="error_message_firstname">Firstname invalide</p>    
+    }
+<br>
+ 
+
+</div>
+<!-- désactiver le bouton si le champ est vide -->
+    <button class="search_button" 
+    (click)="submitForm()" >search</button>
+
+    
