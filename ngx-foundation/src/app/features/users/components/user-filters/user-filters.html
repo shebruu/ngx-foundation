@@ -1,26 +1,17 @@
+<h3>User Filters</h3>
+<form [formGroup]="userFilterForm" (ngSubmit)="submitForm()" class="form">
 
-
-<p>user-filters works!</p>
-
-<div [formGroup]="userFilterForm">
-    
-    <label >FirstName:</label>
-
-
-    <input  formControlName="firstname" type="text"  placeholder="Enter firstname"   >
-        <!-- firstname @createuserfilterform --> 
+    <div class="row">
+        <label for="firstname">FirstName</label>
+        <input id="firstname" formControlName="firstname" type="text" placeholder="Enter firstname" />
 
         @if (!userFilterForm.controls['firstname'].valid &&
         userFilterForm.controls['firstname'].dirty &&
         userFilterForm.controls['firstname'].touched ) {
-        <p class="error_message_firstname">Firstname invalide</p>    
-    }
-<br>
- 
+        <p class="error_message_firstname">Firstname invalide</p>
+        }
+    </div>
 
-</div>
-<!-- désactiver le bouton si le champ est vide -->
-    <button class="search_button" 
-    (click)="submitForm()" >search</button>
+    <button type="submit">Search</button>
 
-    
+</form>
