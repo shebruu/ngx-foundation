@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { JsonPipe } from '@angular/common';
 import { CarFormFactory } from '../../form/carForm.factory';
 
 @Component({
   selector: 'app-car-form',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, JsonPipe],
   templateUrl: './car-form.html',
   styleUrl: './car-form.scss'
 })
@@ -33,12 +34,12 @@ export class CarForm {
       this.createdCar = carData;
       this.showSuccess = true;
       
-      // Reset après 3 secondes
+      // Reset après 20 secondes
       setTimeout(() => {
         this.carForm.reset();
         this.showSuccess = false;
         this.createdCar = null;
-      }, 3000);
+      }, 20000);
       
     } else this.carForm.markAllAsTouched();
   }
