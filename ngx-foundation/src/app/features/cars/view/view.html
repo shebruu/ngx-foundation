@@ -1,1 +1,6 @@
-<p>show details works!</p>
+<app-page-title title="Car Details" subtitle="View car information and details." [style]="TitleStyleEnum.CENTER">
+</app-page-title>
+
+<app-detail-card title="Tesla Model S" [details]="carDetails" [actions]="carActions" entityType="cars"
+    [entityId]="currentCarId" (actionClicked)="onCarActionClicked($event)">
+</app-detail-card>

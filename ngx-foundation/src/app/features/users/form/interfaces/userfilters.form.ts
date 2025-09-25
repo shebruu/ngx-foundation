@@ -1,3 +1,3 @@
-export interface UserFilter {
+export interface UserFilters {
   firstname:string|undefined,
 }

@@ -1,68 +1,201 @@
 .nav_header {
-    background-color: #96bfe0;
-    width: 100%;
-   opacity: 0.9;
- 
-    overflow: auto;
-    position: fixed;
-    top: 0;
-    
-    ul {
-    list-style-type: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: var(--gradient-primary);
+  border-bottom: 2px solid var(--accent-color);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.4);
+  z-index: 1100;
+  min-height: 70px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  
+  // Effet de réduction au scroll (optionnel)
+  &.scrolled {
+    min-height: 60px;
+    box-shadow: 0 2px 15px rgba(15, 23, 42, 0.3);
+  }
+
+  ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0 20px;
+    flex-wrap: wrap; /* header de s’agrandir vers le bas */
 
     li {
-        float: left;
-        margin-right: 20px;
-        margin-left: 30px;
+      margin: 0 20px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      
+      // Indicateur pour les menus avec sous-menus
+      &:has(ul) > a::after {
+        content: '▼';
+        margin-left: 8px;
+        font-size: 10px;
+        transition: transform 0.3s ease;
+        opacity: 0.7;
+      }
+      
+      &:has(ul):hover > a::after {
+        transform: rotate(180deg);
+        opacity: 1;
+      }
+
+      a {
+        display: block;
+        padding: 18px 30px;
+        color: #ffffff;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 600;
+        font-size: 16px;
+        border-radius: 12px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
         
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: var(--gradient-chrome);
+          opacity: 0;
+          border-radius: 12px;
+          transition: opacity 0.3s ease;
+        }
+
+        // État actif pour la navigation
+        &.active {
+          background: var(--gradient-tech);
+          color: white;
+          box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+          
+          &::after {
+            opacity: 1;
+            transform: rotate(180deg);
+          }
+        }
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
+          
+          &::before {
+            opacity: 0.2;
+          }
+        }
+      }
+
+    
+      ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 220px;
+        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+        padding: 8px;
+        margin: 8px 0 0 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1200;
+        backdrop-filter: blur(10px);
+        
+        &::before {
+          content: '';
+          position: absolute;
+          top: -6px;
+          left: 20px;
+          width: 12px;
+          height: 12px;
+          background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+          border: 1px solid var(--border);
+          border-bottom: none;
+          border-right: none;
+          transform: rotate(45deg);
+        }
+      }
+
+      /* Affichage intelligent au survol avec délai */
+      &:hover > ul {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        transition-delay: 0.1s;
+      }
+
+      ul li {
+        margin: 2px 0;
         
         a {
-            display: block;
-            color: rgb(1, 0, 27);
-            text-align: center;
-            padding: 10px 26px;
-            text-decoration: none;
-            
-            &:hover {
-                background-color: #a0a8ac;
-                color: black;
-                
+          display: block;
+          padding: 12px 16px;
+          text-align: left;
+          font-size: 14px;
+          font-weight: 500;
+          background: transparent;
+          color: var(--text-dark);
+          border-radius: 8px;
+          transition: all 0.2s ease;
+          position: relative;
           
+          &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 3px;
+            height: 0;
+            background: var(--accent-color);
+            border-radius: 2px;
+            transform: translateY(-50%);
+            transition: height 0.2s ease;
+          }
+
+          &:hover {
+            background: var(--gradient-tech);
+            color: white;
+            transform: translateX(4px);
+            
+            &::before {
+              height: 20px;
             }
+          }
+          transform: translateX(5px);
         }
+      }
     }
   }
 }
 
-.disable_users,
-.disable_cars{
-  display: none;
-//   visibility: hidden;
 
-}
-
-
-li:hover .disable_users,
-li:hover .disable_cars {
-  display:flex;
-  position: relative;
-    //  flex-direction:row;
-     flex-direction: column;
-
-}
 
 
 .sidebar {
-  background-color: #96bfe0;
-  width: 215px;
+  display: none;
+  background: var(--gradient-primary);
+  border-right: 3px solid var(--accent-color);
+  width: 240px;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 8px 0 30px rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(10px);
+
 
   ul {
     list-style-type: none;
@@ -70,34 +203,60 @@ li:hover .disable_cars {
     padding: 20px 0;
     display: flex;
     flex-direction: column;
+    
 
     li {
       width: 100%;
-      margin: 0;
+      margin: 5px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-
+    
       a {
         display: block;
-        color: rgb(1, 0, 27);
-
-        padding: 15px 20px;
+        color: #ffffff;
+        padding: 18px 15px 18px 30px;
         text-decoration: none;
-
+        text-align: left;
+        font-weight: 600;
+        border-radius: 0 30px 30px 0;
+        margin-right: 15px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 4px;
+          background: var(--accent-color);
+          transform: scaleY(0);
+          transition: transform 0.3s ease;
+        }
+        
         &:hover {
-          background-color: #a0a8ac;
-          color: black;
-          border-left-color: #333;
-          padding-left: 25px;
+          background: var(--gradient-tech);
+          color: #ffffff;
+          padding-left: 35px;
+          transform: translateX(8px);
+          box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+          
+          &::before {
+            transform: scaleY(1);
+          }
         }
 
         &.sub-menu {
-          padding-left: 40px;
+          padding-left: 50px;
           font-size: 0.9em;
-          background-color: rgba(255, 255, 255, 0.05);
+          background: rgba(100, 116, 139, 0.2);
+          color: rgba(255, 255, 255, 0.9);
 
           &:hover {
-            padding-left: 45px;
-            background-color: rgba(255, 255, 255, 0.1);
+            padding-left: 55px;
+            background: var(--gradient-chrome);
+            color: #ffffff;
           }
         }
       }
@@ -107,34 +266,82 @@ li:hover .disable_cars {
 
 
 .active {
-  background-color: #bfbeee !important;
-  color: black !important;
-  font-weight: bold;
-  border-left-color: #333 !important;
+  background: rgba(255, 255, 255, 0.3) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
 }
 
-// Styles responsives
+// Styles responsives intelligents
 @media (max-width: 768px) {
-  .nav {
-    width: 200px;
-  }
-
-  body {
-    margin-left: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav {
-    width: 60px;
-
-    ul li a {
-      padding: 15px 10px;
-      font-size: 0;
-
-      &:before {
-        font-size: 1.2rem;
+  .nav_header {
+    min-height: 60px;
+    
+    ul {
+      padding: 0 10px;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      
+      > li {
+        margin: 0 5px;
+        flex: 1;
+        
+        > a {
+          padding: 10px 8px;
+          font-size: 13px;
+          text-align: center;
+          white-space: nowrap;
+          
+          &::after {
+            display: none; // Masquer l'indicateur sur mobile
+          }
+        }
+        
+        // Sous-menus en overlay mobile
+        ul {
+          position: fixed;
+          top: 60px;
+          left: 0;
+          right: 0;
+          width: 100vw;
+          min-width: unset;
+          background: linear-gradient(145deg, #1e293b 0%, #334155 100%);
+          border-radius: 0;
+          padding: 20px;
+          margin: 0;
+          
+          &::before {
+            display: none;
+          }
+          
+          li a {
+            color: white;
+            padding: 15px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            margin: 5px 0;
+            
+            &:hover {
+              background: var(--gradient-tech);
+              transform: none;
+            }
+          }
+        }
       }
     }
   }
+  
+  .sidebar {
+    display: none;
+  }
 }
+
+@media (min-width: 769px) {
+  .nav_header {
+    display: none;
+  }
+  .sidebar {
+    display: block;
+  }
+}
+

@@ -1,14 +1,38 @@
 /* You can add global styles to this file */
 
 :root {
-  --primary-color: #4299e1;
-  --secondary-color: #64748b;
-  --text-dark: #2d3748;
-  --text-light: #718096;
-  --background: #ffffff;
-  --surface: #f8fafc;
-  --border: #e5e7eb;
-  --shadow: rgba(0, 0, 0, 0.1);
+  --header-h: 100px;  /* = body margin-top */
+  --sidebar-w: 250px; 
+  --primary-color: #1e293b;
+  --primary-hover: #0f172a;
+  --secondary-color: #64748b; 
+  --secondary-hover: #475569;
+  --accent-color: #0ea5e9; 
+  --accent-hover: #0284c7;
+  --danger-color: #dc2626; 
+  --danger-hover: #b91c1c;
+  --success-color: #10b981;  
+  --success-hover: #059669;
+  --warning-color: #f59e0b;  
+  --warning-hover: #d97706;
+  --text-dark: #0f172a;
+  --text-light: #64748b;
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --shadow: rgba(15, 23, 42, 0.15);
+  
+
+  --gradient-primary: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  --gradient-chrome: linear-gradient(135deg, #64748b 0%, #94a3b8 50%, #64748b 100%);
+  --gradient-tech: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
+  --gradient-speed: linear-gradient(45deg, #1e293b 0%, #0ea5e9 50%, #1e293b 100%);
+  
+  /* Variables responsives */
+  --header-h-mobile: 70px;
+  --sidebar-w-mobile: 0px;
+  --container-padding: 1rem;
+  --container-padding-mobile: 0.75rem;
 }
 
 /* Reset et styles de base */
@@ -26,17 +50,19 @@ body {
   font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text-dark);
   background-color: var(--background);
-  margin-top: 100px;
+  margin-top: var(--header-h);
   line-height: 1.6;
-  margin-left: 250px; 
+  margin-left: var(--sidebar-w); 
   min-height: 100vh;
+  transition: margin-left 0.3s ease, margin-top 0.3s ease;
 }
 
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem; 
+  padding: var(--container-padding);
+  width: 100%;
 }
 
 .text-left { 
@@ -83,27 +109,90 @@ body {
 
 
 .search_button {
+  margin-right: 10px;
+  border: none;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 
-            margin-right: 10px;
-         
+  &:hover {
+    background-color: #27566d;
+  }
+}
 
-            border: none;
-            padding: 8px 16px;
-         
-            text-decoration: none;
-            border-radius: 4px;
-
-            &:hover {
-                background-color: #27566d;
-            }
-        }
 /* Responsive utilities */
-@media (max-width: 768px) {
-  body {
-    padding-top: 2rem; /* Moins d'espace sur mobile */
+/* Tablettes */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-w: 200px;
   }
   
   .container {
-    padding: 0 0.75rem;
+    max-width: 95%;
   }
 }
+
+/* Petites tablettes et grands mobiles */
+@media (max-width: 768px) {
+  :root {
+    --header-h: var(--header-h-mobile);
+    --sidebar-w: var(--sidebar-w-mobile);
+    --container-padding: var(--container-padding-mobile);
+  }
+  
+  body {
+    margin-top: var(--header-h-mobile);
+    margin-left: 0;
+  }
+  
+  .container {
+    padding: var(--container-padding-mobile);
+    max-width: 100%;
+  }
+  
+  /* Ajustements des espacements sur mobile */
+  .mt-8 { margin-top: 1.5rem; }
+  .mb-8 { margin-bottom: 1.5rem; }
+  .p-8 { padding: 1.5rem; }
+  .p-6 { padding: 1rem; }
+  
+  .search_button {
+    margin-right: 5px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Petits mobiles */
+@media (max-width: 480px) {
+  :root {
+    --header-h-mobile: 60px;
+    --container-padding-mobile: 0.5rem;
+  }
+  
+  body {
+    margin-top: var(--header-h-mobile);
+    font-size: 0.9rem;
+  }
+  
+  .container {
+    padding: var(--container-padding-mobile);
+  }
+  
+  /* Espacements réduits sur très petits écrans */
+  .mt-6 { margin-top: 1rem; }
+  .mt-8 { margin-top: 1.25rem; }
+  .mb-6 { margin-bottom: 1rem; }
+  .mb-8 { margin-bottom: 1.25rem; }
+  .p-6 { padding: 0.75rem; }
+  .p-8 { padding: 1rem; }
+  
+  .search_button {
+    margin-right: 3px;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+}
+
+

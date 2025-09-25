@@ -26,21 +26,38 @@ h2 {
     transition: all 0.2s;
     
     &.btn-primary {
-      background-color: #3b82f6;
+      background-color: #8b9dc3;
       color: white;
+      border: 1px solid #7a8bb8;
       
       &:hover {
-        background-color: #2563eb;
+        background-color: #7a8bb8;
       }
     }
     
     &.btn-secondary {
-      background-color: #6b7280;
+      background-color: #a8b2a5;
       color: white;
+      border: 1px solid #9ca59a;
       
       &:hover {
-        background-color: #4b5563;
+        background-color: #9ca59a;
       }
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .parent-controls {
+    margin: 1rem auto;
+    padding: 1rem;
+    
+    button {
+      width: 48%;
+      margin: 0.25rem 1% 0.5rem 0;
+      padding: 0.75rem 0.5rem;
+      font-size: 0.8rem;
     }
   }
 }

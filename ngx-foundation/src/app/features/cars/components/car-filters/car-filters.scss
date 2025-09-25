@@ -1,68 +1,143 @@
 
 h3 {
   font-size: 1.5rem;
+  font-weight: 600;
   text-align: left;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
   margin-left: 30rem;
+  color: var(--text-dark, #2d3748);
 }
 
 #car-filters {
-  max-width: 37.5rem;
+  max-width: 40rem;
   margin: 0 auto 0 15rem;
-  padding: 1.25rem;
-  border: 0.0625rem solid #ccc;
-  border-radius: 0.5rem;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
+
+@media (max-width: 1024px) {
+  h3 {
+    margin-left: 8rem;
+  }
+  
+  #car-filters {
+    margin: 0 auto 0 8rem;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  h3 {
+    margin-left: 0;
+    text-align: center;
+  }
+  
+  #car-filters {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  
+  .row.two-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 
 .row {
   display: flex;
   flex-direction: column;
-  margin-bottom: 0.9375rem;
+  margin-bottom: 1rem;
 }
-
 
 .row.two-cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.9375rem;
+  gap: 1.5rem;
+  align-items: end;
 }
 
 
 label {
   font-size: 0.875rem;
-  font-weight: bold;
-  margin-bottom: 0.3125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark, #374151);
 }
-
 
 input {
-  padding: 0.625rem;
-  font-size: 1rem;
-  border: 0.0625rem solid #ddd;
-  border-radius: 0.25rem;
-}
-
-// Bouton
-button {
-  width: 100%;
   padding: 0.75rem;
   font-size: 1rem;
-  background-color: #0b56eb;
-  color: white;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  margin-top: 0.625rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  background: #ffffff;
+  
+  &:focus {
+    outline: none;
+    border-color: var(--primary-color, #8b9dc3);
+    box-shadow: 0 0 0 3px rgba(139, 157, 195, 0.1);
+  }
+  
+  &::placeholder {
+    color: #9ca3af;
+  }
 }
+
+// Bouton avec thème automobile/technologie
+button {
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: var(--gradient-primary);
+  color: white;
+  border: 2px solid var(--accent-color);
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-tech);
+    transition: left 0.3s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
+    border-color: var(--accent-hover);
+    
+    &::before {
+      left: 0;
+    }
+  }
+  
+  &:disabled {
+    background: var(--secondary-color);
+    border-color: var(--border);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
 .error {
-  color: #dc2626;
+  color: var(--danger-color, #c4a5a0);
   font-size: 0.75rem;
   margin-top: 0.25rem;
   display: block;
-}
-
-button:hover {
-  background-color: #0056b3;
+  font-weight: 500;
 }
 

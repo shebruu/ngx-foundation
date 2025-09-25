@@ -1,15 +1,18 @@
 import { Component, ViewChild } from '@angular/core';
 import { CarFiltersComponent } from './components/car-filters/car-filters';
 import { CarFilters as CarFiltersForm } from './form/interfaces/carfilters.interface';
+import { PageTitle } from '../../shared/components/page-title/page-title';
+import { TitleStyleEnum } from '../../shared/enums/title-style.enum';
 
 @Component({
   selector: 'app-cars',
-  imports: [CarFiltersComponent],
+  imports: [PageTitle,CarFiltersComponent],
   templateUrl: './cars.html',
   styleUrl: './cars.scss'
 })
 export class Cars {
   
+  TitleStyleEnum = TitleStyleEnum;
   //  Accès direct au composant enfant
   @ViewChild(CarFiltersComponent) carFiltersComponent!: CarFiltersComponent;
   
@@ -51,7 +54,7 @@ export class Cars {
   
   // recherche depuis le parent
   triggerSearch() {
-    console.log("🔍 Déclenchement de la recherche depuis le parent");
+    console.log("Déclenchement de la recherche depuis le parent");
   
     this.carFiltersComponent.search();
   }

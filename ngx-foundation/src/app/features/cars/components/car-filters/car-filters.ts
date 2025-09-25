@@ -11,7 +11,7 @@ import { CarFilters } from '../../form/interfaces/carfilters.interface';
 })
 export class CarFiltersComponent {
   private carFormFactory = inject(CarFormFactory);
-  public carFilterForm = this.carFormFactory.createFilterForm();
+  public carFilterForm = this.carFormFactory.createcarFilterForm();
 
   @Output() FormFilterChanged = new EventEmitter<CarFilters>();
 

@@ -1,0 +1,15 @@
+<div class="detail-card">
+    <h3>{{ title }}</h3>
+
+    <div class="detail-info">
+        <p *ngFor="let detail of details">
+            <strong>{{ detail.label }}:</strong> {{ detail.value }}
+        </p>
+    </div>
+
+    <div class="actions" *ngIf="actions.length > 0">
+        <button *ngFor="let action of actions" [class]="'btn btn-' + action.style" (click)="onActionClick(action)">
+            {{ action.label }}
+        </button>
+    </div>
+</div>

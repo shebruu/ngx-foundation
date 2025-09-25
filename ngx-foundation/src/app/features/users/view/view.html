@@ -1,1 +1,6 @@
-<p>view works!</p>
+<app-page-title title="User Details" subtitle="View user information and details." [style]="TitleStyleEnum.CENTER">
+</app-page-title>
+
+<app-detail-card title="John Doe" [details]="userDetails" [actions]="userActions" entityType="users"
+    [entityId]="currentUserId" (actionClicked)="onUserActionClicked($event)">
+</app-detail-card>

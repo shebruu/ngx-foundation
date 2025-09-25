@@ -1,33 +1,33 @@
 <nav class="nav_header">
   <ul>
     <li>
-      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-        >Home</a
-      >
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
     </li>
     <!-- 
         users -->
     <li>
-      <a routerLink="/users" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" click="toggleUsers()">
-        Users</a
-      >
+      <a routerLink="/users" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+        (click)="toggleUsers()">
+        Users</a>
 
       <ul class="disable_users">
         <li><a routerLink="/users/new" routerLinkActive="active">Add User</a></li>
-        <li><a routerLink="/users/:id" routerLinkActive="active">Details</a></li>
+        <li><a routerLink="/users/:id" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Details</a>
+        </li>
         <li><a routerLink="/users/:id/edit" routerLinkActive="active">Edit User</a></li>
       </ul>
     </li>
 
     <!-- cars -->
     <li>
-      <a routerLink="/cars" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" click="toggleCars()">
-        Cars</a
-      >
+      <a routerLink="/cars" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+        (click)="toggleCars()">
+        Cars</a>
 
       <ul class="disable_cars">
         <li><a routerLink="/cars/new" routerLinkActive="active">Add Car</a></li>
-        <li><a routerLink="/cars/:id" routerLinkActive="active">Details</a></li>
+        <li><a routerLink="/cars/:id" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Details</a>
+        </li>
         <li><a routerLink="/cars/:id/edit" routerLinkActive="active">Edit Car</a></li>
       </ul>
     </li>
@@ -39,36 +39,43 @@
 
 <nav class="sidebar">
   <ul>
+    <li>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    </li>
     <!--  Users -->
     <li>
-      <a routerLink="/users" >
+      <a routerLink="/users">
         Users
       </a>
     </li>
 
     <li>
-      <a routerLink="/users/new" class="sub-menu"> Add User </a>
+      <a routerLink="/users/new" class="sub-menu" routerLinkActive="active"> Add User </a>
     </li>
     <li>
-      <a routerLink="/users/:id" class="sub-menu"> Show Details </a>
+      <a routerLink="/users/:id" class="sub-menu" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Show Details </a>
     </li>
     <li>
-      <a routerLink="/users/:id/edit" class="sub-menu"> Edit User </a>
+      <a routerLink="/users/:id/edit" class="sub-menu" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"> Edit User </a>
     </li>
     <li>
-      <a routerLink="/cars" >
+      <a routerLink="/cars">
         Cars
       </a>
     </li>
 
     <li>
-      <a routerLink="/cars/new" class="sub-menu"> Add Car </a>
+      <a routerLink="/cars/new" class="sub-menu" routerLinkActive="active"> Add Car </a>
     </li>
     <li>
-      <a routerLink="/cars/:id" class="sub-menu"> Show Details </a>
+      <a routerLink="/cars/:id" class="sub-menu" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Show Details </a>
     </li>
     <li>
-      <a routerLink="/cars/:id/edit" class="sub-menu"> Edit Car </a>
+      <a routerLink="/cars/:id/edit" class="sub-menu" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"> Edit Car </a>
     </li>
   </ul>
 </nav>

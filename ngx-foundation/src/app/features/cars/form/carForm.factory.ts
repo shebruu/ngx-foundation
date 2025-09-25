@@ -10,7 +10,7 @@ import { Car } from './interfaces/car.interface';
 export class CarFormFactory {
   private fb: NonNullableFormBuilder = inject(NonNullableFormBuilder);
 
-  public createFilterForm(data?: Partial<CarFilters>) {
+  public createcarFilterForm(data?: Partial<CarFilters>) {
     return this.fb.group({
       model: this.fb.control(data?.model, [Validators.minLength(2)]),
       brand: this.fb.control(data?.brand, [Validators.minLength(2)]),

@@ -1,0 +1,61 @@
+<div [formGroup]="userForm" class="user-form">
+    @let f = userControls.firstname;
+    @let l = userControls.lastname;
+    @let b = userControls.birth_date;
+
+    <div class="form-group m-column">
+        <div class="form-group column flex">
+            <label>Firstname</label>
+            <input formControlName="firstname">
+
+            @if(isRequired(f)){
+            <span class="error">Firstname is required!</span>
+            }
+            @if(hasMinLengthError(f)){
+            <span class="error">Firstname is too short!</span>
+            }
+        </div>
+        <div class="form-group column flex">
+            <label>Lastname</label>
+            <input formControlName="lastname">
+
+            @if(isRequired(l)){
+            <span class="error">Lastname is required!</span>
+            }
+            @if(hasMinLengthError(l)){
+            <span class="error">Lastname is too short!</span>
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="form-group column flex">
+            <label>Birthdate</label>
+            <input type="date" formControlName="birth_date">
+            @if(isRequired(b)){
+            <span class="error">Birthdate is required!</span>
+            }
+            @if(hasBirthYearError(b)){
+            <span class="error">Birth year must be after 1900!</span>
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        <button (click)="submitForm()">Submit</button>
+    </div>
+
+    @if(showSuccess && createdUser) {
+    <div class="success-message">
+        <h4>User created successfully!</h4>
+        <div class="user-details">
+            <p><strong>Firstname:</strong> {{ createdUser.firstname }}</p>
+            <p><strong>Lastname:</strong> {{ createdUser.lastname }}</p>
+            <p><strong>Birthdate:</strong> {{ createdUser.birth_date }}</p>
+        </div>
+    </div>
+
+    <div class="success-message">
+        <h4>JSON - Raw Data:</h4>
+        <pre>{{ createdUser | json }}</pre>
+    </div>
+    }
+</div>

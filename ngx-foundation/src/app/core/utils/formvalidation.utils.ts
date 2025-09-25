@@ -25,3 +25,15 @@ export function hasMinError(control:AbstractControl) {
 export function hasMaxError(control:AbstractControl) {
   return hasError(control, 'max')
 }
+
+
+export function birthYearValidator(control: AbstractControl) {
+  if (!control.value) return null;
+  const year = new Date(control.value).getFullYear();
+  return year < 1900 ? { birthYearInvalid: true } : null;
+}
+
+export function hasBirthYearError(control: AbstractControl) {
+  return hasError(control, 'birthYearInvalid')
+}
+

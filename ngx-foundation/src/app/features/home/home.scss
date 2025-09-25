@@ -90,23 +90,24 @@
   font-size: 1rem;
   
   &.btn-primary {
-    background-color: #4299e1;
+    background-color: #8b9dc3;
     color: white;
+    border: 1px solid #7a8bb8;
     
     &:hover {
-      background-color: #3182ce;
+      background-color: #7a8bb8;
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(66, 153, 225, 0.4);
+      box-shadow: 0 4px 12px rgba(139, 157, 195, 0.4);
     }
   }
   
   &.btn-secondary {
     background-color: transparent;
-    color: #4299e1;
-    border: 2px solid #4299e1;
+    color: #8b9dc3;
+    border: 2px solid #8b9dc3;
     
     &:hover {
-      background-color: #4299e1;
+      background-color: #8b9dc3;
       color: white;
       transform: translateY(-2px);
     }
