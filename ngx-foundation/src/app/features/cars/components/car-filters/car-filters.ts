@@ -1,6 +1,7 @@
 import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CarFilterFormFactory, CarFilters } from '../../form/carfilter.form';
+import { CarFormFactory } from '../../form/carForm.factory';
+import { CarFilters } from '../../form/interfaces/carfilters.interface';
 
 @Component({
   selector: 'app-car-filters',
@@ -9,8 +10,8 @@ import { CarFilterFormFactory, CarFilters } from '../../form/carfilter.form';
   styleUrl: './car-filters.scss'
 })
 export class CarFiltersComponent {
-  private carFilterFormFactory = inject(CarFilterFormFactory);
-  public carFilterForm = this.carFilterFormFactory.createForm();
+  private carFormFactory = inject(CarFormFactory);
+  public carFilterForm = this.carFormFactory.createFilterForm();
 
   @Output() FormFilterChanged = new EventEmitter<CarFilters>();
 

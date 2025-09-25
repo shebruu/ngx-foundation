@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { CarFiltersComponent } from './components/car-filters/car-filters';
-import { CarFilters as CarFiltersForm } from './form/carfilter.form';
+import { CarFilters as CarFiltersForm } from './form/interfaces/carfilters.interface';
 
 @Component({
   selector: 'app-cars',
