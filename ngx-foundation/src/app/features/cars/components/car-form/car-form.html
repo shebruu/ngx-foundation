@@ -1,41 +1,60 @@
-<h3>Create New Car</h3>
-<div id="car-form" [formGroup]="carForm" class="form">
+<div [formGroup]="carForm" class="car-form">
+    @let b = carControls.brand;
+    @let m = carControls.model;
+    @let h = carControls.hp;
+    @let y = carControls.year;
 
-    <div class="row">
-        <label for="model">Model *</label>
-        <input id="model" formControlName="model" type="text" placeholder="Enter car model" />
-        @if(!carForm.controls['model'].valid &&
-        (carForm.controls["model"].dirty || carForm.controls["model"].touched)){
-        <span class="error">Model is required (min 2 characters)</span>
-        }
+    <div class="form-group m-column">
+        <div class="form-group column flex">
+            <label>Brand</label>
+            <input formControlName="brand">
+            @if(!b.valid && (b.dirty || b.touched)){
+            @if(b.hasError('required')){
+            <span class="error">Brand required!</span>
+            }
+            @if(b.hasError('minlength')){
+            <span class="error">Brand length invalid!</span>
+            }
+            }
+        </div>
+        <div class="form-group column flex">
+            <label>Model</label>
+            <input formControlName="model">
+            @if(!m.valid && (m.dirty || m.touched)){
+            <span class="error">Model invalid!</span>
+            }
+        </div>
+    </div>
+    <div class="form-group m-column">
+        <div class="form-group column flex">
+            <label>Hp</label>
+            <input type="number" formControlName="hp">
+            @if(!h.valid && (h.dirty || h.touched)){
+            <span class="error">HP invalid!</span>
+            }
+
+        </div>
+        <div class="form-group column flex">
+            <label>Year</label>
+            <input type="number" formControlName="year">
+            @if(!y.valid && (y.dirty || y.touched)){
+            <span class="error">Year invalid!</span>
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        <button (click)="submitForm()">Envoyer</button>
     </div>
 
-    <div class="row">
-        <label for="brand">Brand *</label>
-        <input id="brand" formControlName="brand" type="text" placeholder="Enter car brand" />
-        @if(!carForm.controls['brand'].valid &&
-        (carForm.controls["brand"].dirty || carForm.controls["brand"].touched)){
-        <span class="error">Brand is required (min 2 characters)</span>
-        }
+    @if(showSuccess && createdCar) {
+    <div class="success-message">
+        <h4>Voiture créée avec succès !</h4>
+        <div class="car-details">
+            <p><strong>Marque:</strong> {{ createdCar.brand }}</p>
+            <p><strong>Modèle:</strong> {{ createdCar.model }}</p>
+            <p><strong>Puissance:</strong> {{ createdCar.hp }} HP</p>
+            <p><strong>Année:</strong> {{ createdCar.year }}</p>
+        </div>
     </div>
-
-    <div class="row">
-        <label for="year">Year *</label>
-        <input id="year" formControlName="year" type="number" inputmode="numeric" placeholder="Enter year" />
-        @if(!carForm.controls['year'].valid &&
-        (carForm.controls["year"].dirty || carForm.controls["year"].touched)){
-        <span class="error">Year is required (≥ 1800)</span>
-        }
-    </div>
-
-    <div class="row">
-        <label for="hp">Horsepower *</label>
-        <input id="hp" formControlName="hp" type="number" inputmode="numeric" placeholder="Enter HP" />
-        @if(!carForm.controls['hp'].valid &&
-        (carForm.controls["hp"].dirty || carForm.controls["hp"].touched)){
-        <span class="error">HP is required (≥ 0)</span>
-        }
-    </div>
-
-    <button (click)="submitForm()" [disabled]="!carForm.valid">Create Car</button>
+    }
 </div>

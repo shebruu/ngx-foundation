@@ -4,39 +4,39 @@
   <div class="row">
 
     <label for="model">Model</label>
-    <input id="model" formControlName="model" type="text" placeholder="Enter model" />
-    @if(!carFilterForm.controls['model'].valid &&
+    <input id="model" formControlName="model" type="text" placeholder="filter by model" />
+    @if(!carFilterForm.controls['model'].valid && carFilterForm.controls['model'].value &&
     (carFilterForm.controls["model"].dirty || carFilterForm.controls["model"].touched)){
-    <span class="error">Model invalid</span>
+    <span class="error">Model must be at least 2 characters</span>
     }
 
   </div>
 
   <div class="row">
     <label for="brand">Brand</label>
-    <input id="brand" formControlName="brand" type="text" placeholder="Enter brand" />
-    @if(!carFilterForm.controls['brand'].valid && (carFilterForm.controls["brand"].dirty ||
-    carFilterForm.controls["brand"].touched)){
-    <span class="error">Brand invalid</span>
+    <input id="brand" formControlName="brand" type="text" placeholder="filter by brand" />
+    @if(!carFilterForm.controls['brand'].valid && carFilterForm.controls['brand'].value &&
+    (carFilterForm.controls["brand"].dirty || carFilterForm.controls["brand"].touched)){
+    <span class="error">Brand must be at least 2 characters</span>
     }
   </div>
 
   <div class="row two-cols">
     <div>
       <label for="minYear">Min Year</label>
-      <input id="minYear" formControlName="minYear" type="number" inputmode="numeric" />
-      @if(!carFilterForm.controls['minYear'].valid && (carFilterForm.controls["minYear"].dirty ||
-      carFilterForm.controls["minYear"].touched)){
-      <span class="error">Min Year invalid</span>
+      <input id="minYear" formControlName="minYear" type="number" inputmode="numeric" placeholder="Optional" />
+      @if(!carFilterForm.controls['minYear'].valid && carFilterForm.controls['minYear'].value &&
+      (carFilterForm.controls["minYear"].dirty || carFilterForm.controls["minYear"].touched)){
+      <span class="error">Min Year must be ≥ 1800</span>
       }
     </div>
     <div>
       <label for="maxYear">Max Year</label>
-      <input id="maxYear" formControlName="maxYear" type="number" inputmode="numeric" />
+      <input id="maxYear" formControlName="maxYear" type="number" inputmode="numeric" placeholder="Optional" />
 
-      @if(!carFilterForm.controls['maxYear'].valid && (carFilterForm.controls["maxYear"].dirty ||
-      carFilterForm.controls["maxYear"].touched)){
-      <span class="error">Max Year invalid</span>
+      @if(!carFilterForm.controls['maxYear'].valid && carFilterForm.controls['maxYear'].value &&
+      (carFilterForm.controls["maxYear"].dirty || carFilterForm.controls["maxYear"].touched)){
+      <span class="error">Max Year cannot exceed current year</span>
       }
     </div>
   </div>
@@ -44,20 +44,20 @@
   <div class="row two-cols">
     <div class="col">
       <label for="minHp">Min HP</label>
-      <input id="minHp" formControlName="minHp" type="number" inputmode="numeric" />
-      @if(!carFilterForm.controls['minHp'].valid && (carFilterForm.controls["minHp"].dirty ||
-      carFilterForm.controls["minHp"].touched)){
-      <span class="error">Min HP invalid</span>
+      <input id="minHp" formControlName="minHp" type="number" inputmode="numeric" placeholder="Optional" />
+      @if(!carFilterForm.controls['minHp'].valid && carFilterForm.controls['minHp'].value &&
+      (carFilterForm.controls["minHp"].dirty || carFilterForm.controls["minHp"].touched)){
+      <span class="error">Min HP must be ≥ 0</span>
       }
 
     </div>
     <div class="col">
       <label for="maxHp">Max HP</label>
-      <input id="maxHp" formControlName="maxHp" type="number" inputmode="numeric" />
+      <input id="maxHp" formControlName="maxHp" type="number" inputmode="numeric" placeholder="Optional" />
 
-      @if(!carFilterForm.controls['maxHp'].valid && (carFilterForm.controls["maxHp"].dirty ||
-      carFilterForm.controls["maxHp"].touched)){
-      <span class="error">Max HP invalid</span>
+      @if(!carFilterForm.controls['maxHp'].valid && carFilterForm.controls['maxHp'].value &&
+      (carFilterForm.controls["maxHp"].dirty || carFilterForm.controls["maxHp"].touched)){
+      <span class="error">Max HP cannot exceed 999</span>
       }
     </div>
   </div>
