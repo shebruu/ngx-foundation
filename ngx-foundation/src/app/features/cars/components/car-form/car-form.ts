@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { JsonPipe } from '@angular/common';
 import { CarFormFactory } from '../../form/carForm.factory';
+import { isRequired, hasMinLengthError, hasMinError } from '../../../../core/utils/formvalidation.utils';
 
 @Component({
   selector: 'app-car-form',
@@ -13,6 +14,11 @@ export class CarForm {
   private readonly carFormFactory = new CarFormFactory();
   public carForm = this.carFormFactory.createForm();
   public carControls = this.carForm.controls;
+  
+  //  utilitaires
+  public isRequired = isRequired;
+  public hasMinLengthError = hasMinLengthError;
+  public hasMinError = hasMinError;
   
   // Variable pour afficher la voiture créée dans la vue
   public createdCar: any = null;

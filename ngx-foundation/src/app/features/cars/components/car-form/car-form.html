@@ -8,20 +8,23 @@
         <div class="form-group column flex">
             <label>Brand</label>
             <input formControlName="brand">
-            @if(!b.valid && (b.dirty || b.touched)){
-            @if(b.hasError('required')){
+
+            @if(isRequired(b)){
             <span class="error">Brand required!</span>
             }
-            @if(b.hasError('minlength')){
+            @if(hasMinLengthError(b)){
             <span class="error">Brand length invalid!</span>
-            }
             }
         </div>
         <div class="form-group column flex">
             <label>Model</label>
             <input formControlName="model">
-            @if(!m.valid && (m.dirty || m.touched)){
-            <span class="error">Model invalid!</span>
+
+            @if(isRequired(m)){
+            <span class="error">Model required!</span>
+            }
+            @if(hasMinLengthError(m)){
+            <span class="error">Model length invalid!</span>
             }
         </div>
     </div>
@@ -29,16 +32,21 @@
         <div class="form-group column flex">
             <label>Hp</label>
             <input type="number" formControlName="hp">
-            @if(!h.valid && (h.dirty || h.touched)){
-            <span class="error">HP invalid!</span>
+            @if (isRequired(h)){
+            <span class="error">Hp required!</span>
             }
-
+            @if (hasMinLengthError(h)){
+            <span class="error">Hp length invalid!</span>
+            }
         </div>
         <div class="form-group column flex">
             <label>Year</label>
             <input type="number" formControlName="year">
-            @if(!y.valid && (y.dirty || y.touched)){
-            <span class="error">Year invalid!</span>
+            @if(isRequired(y)){
+            <span class="error">Year required!</span>
+            }
+            @if(hasMinError(y)){
+            <span class="error">Year must be ≥ 1800!</span>
             }
         </div>
     </div>
