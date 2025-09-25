@@ -48,7 +48,17 @@
 
     @if(showSuccess && createdCar) {
     <div class="success-message">
-        <h4> JSON - Voiture créée !</h4>
+        <h4>Voiture créée avec succès !</h4>
+        <div class="car-details">
+            <p><strong>Marque:</strong> {{ createdCar.brand }}</p>
+            <p><strong>Modèle:</strong> {{ createdCar.model }}</p>
+            <p><strong>Puissance:</strong> {{ createdCar.hp }} HP</p>
+            <p><strong>Année:</strong> {{ createdCar.year }}</p>
+        </div>
+    </div>
+
+    <div class="success-message">
+        <h4>JSON - Données brutes :</h4>
         <pre>{{ createdCar | json }}</pre>
     </div>
     }
