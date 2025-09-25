@@ -1,5 +1,5 @@
 <h3>User Filters</h3>
-<form [formGroup]="userFilterForm" (ngSubmit)="submitForm()" class="form">
+<div [formGroup]="userFilterForm" (ngSubmit)="submitForm()" class="form">
 
     <div class="row">
         <label for="firstname">FirstName</label>
@@ -12,6 +12,6 @@
         }
     </div>
 
-    <button type="submit">Search</button>
+    <button (click)="submitForm()">Search</button>
 
-</form>
+</div>

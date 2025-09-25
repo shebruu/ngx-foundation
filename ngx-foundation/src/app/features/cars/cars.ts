@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { CarFiltersComponent } from './components/car-filters/car-filters';
-import { CarFilters } from './form/carfilter.form';
+import { CarFilters as CarFiltersForm } from './form/carfilter.form';
 
 @Component({
   selector: 'app-cars',
@@ -14,7 +14,7 @@ export class Cars {
   @ViewChild(CarFiltersComponent) carFiltersComponent!: CarFiltersComponent;
   
   // Méthode appelée quand le composant enfant émet des données
-  onCarFiltersChanged(filters: CarFilters) {
+  onCarFiltersChanged(filters: CarFiltersForm) {
     console.log("DONNÉES REÇUES:", filters);
     console.log("Model:", filters.model);
     console.log("Brand:", filters.brand);
